@@ -2,6 +2,10 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #f4f4f4;
+    background-image: url('path/to/your/logo.png'); /* Ganti dengan path logo Anda */
+    background-size: cover; /* Ukuran penuh */
+    background-repeat: no-repeat; /* Tidak mengulang */
+    background-position: center; /* Pusat */
     text-align: center;
     padding: 20px;
 }
@@ -73,18 +77,20 @@ button:hover {
     margin-top: 20px;
     font-size: 14px;
 }
+
 /* Tambahan untuk footer */
 .footer {
     background-color: #6a1b9a; /* Warna ungu */
     color: white;
-    padding: 10px 0;
+    padding: 20px 0; /* Tambah padding atas dan bawah */
     margin-top: 20px;
+    text-align: center; /* Rata tengah */
 }
 
 .footer a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px; /* Tambah jarak antar tautan */
 }
 
 .footer a:hover {
