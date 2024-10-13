@@ -46,8 +46,8 @@ document.getElementById('generateAuto').addEventListener('click', function() {
     const intervalInput = document.getElementById('timeInterval').value;
 
     // Cek apakah jumlah barcode valid
-    if (isNaN(barcodeCount) || barcodeCount < 1 || barcodeCount > 10) {
-        alert('Masukkan jumlah barcode antara 1 hingga 10!');
+    if (isNaN(barcodeCount) || barcodeCount < 1 || barcodeCount > 50) {
+        alert('Masukkan jumlah barcode antara 1 hingga 50!');
         return;
     }
 
