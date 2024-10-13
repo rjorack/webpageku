@@ -34,6 +34,12 @@ function generateBarcode(barcodeInput) {
     }
 }
 
+// Event listener untuk tombol generate manual
+document.getElementById('generateManual').addEventListener('click', function() {
+    const manualInput = document.getElementById('manualInput').value;
+    generateBarcode(manualInput); // Menghasilkan barcode berdasarkan input manual
+});
+
 // Event listener untuk tombol generate otomatis
 document.getElementById('generateAuto').addEventListener('click', function() {
     const barcodeCount = parseInt(document.getElementById('barcodeCount').value);
