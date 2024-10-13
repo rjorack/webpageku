@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>Invoice QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
     <!-- Link jQuery dan jQuery.qrcode -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <input type="text" id="qrInput" placeholder="Masukkan teks atau URL">
+    <div class="invoice-container">
+        <h1>Invoice #12345</h1>
+        <div class="invoice-details">
+            <p><strong>Tanggal:</strong> 13 Oktober 2024</p>
+            <p><strong>Nama:</strong> John Doe</p>
+            <p><strong>Total Pembayaran:</strong> Rp1.500.000</p>
+        </div>
+        
+        <input type="text" id="qrInput" placeholder="Masukkan kode pembayaran atau URL">
         <button id="generateQR">Generate QR Code</button>
-        <div id="qrCanvas"></div>
+
+        <div class="barcode-section">
+            <h2>Scan untuk Pembayaran</h2>
+            <div id="qrCanvas"></div>
+        </div>
     </div>
 
     <footer>
-        <p>Follow us on:
+        <p>Terima kasih telah berbelanja! <br> Follow us on: 
             <a href="#">Website</a> | 
             <a href="#">Twitter</a> | 
             <a href="#">Telegram</a>
