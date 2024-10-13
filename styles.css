@@ -47,12 +47,11 @@ p {
     margin-top: 20px;
 }
 
-#qrCanvas {
+#barcode {
     margin: 0 auto;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100px;
     padding: 10px;
-    border: 1px dashed #ccc;
 }
 
 button {
