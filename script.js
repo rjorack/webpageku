@@ -8,14 +8,14 @@ document.getElementById('generateQR').addEventListener('click', function() {
 
     // Cek apakah input tidak kosong
     if (qrInput.trim() === '') {
-        alert('Silakan masukkan kode pembayaran atau URL!');
+        alert('Silakan masukkan kode transaksi atau URL!');
         return;
     }
 
-    // Generate QR Code dengan ukuran yang lebih besar
+    // Generate QR Code untuk transaksi atau URL
     $(qrCanvas).qrcode({
         text: qrInput,
-        width: 200,
-        height: 200
+        width: 150,
+        height: 150
     });
 });
