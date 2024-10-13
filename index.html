@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bukti Transaksi Supermarket</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Link jQuery dan jQuery.qrcode -->
+    <!-- Link jQuery dan JsBarcode -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
 </head>
 <body>
     <div class="receipt-container">
@@ -51,12 +51,12 @@
         </div>
 
         <div class="barcode-section">
-            <p>Scan untuk pelacakan</p>
-            <div id="qrCanvas"></div>
+            <p>Nomor Transaksi (Barcode)</p>
+            <svg id="barcode"></svg>
         </div>
 
-        <input type="text" id="qrInput" placeholder="Masukkan kode transaksi atau URL">
-        <button id="generateQR">Generate QR Code</button>
+        <input type="text" id="barcodeInput" placeholder="Masukkan nomor transaksi">
+        <button id="generateBarcode">Generate Barcode</button>
 
         <p class="thanks-message">Terima kasih telah berbelanja di Supermarket XYZ!</p>
     </div>
