@@ -23,9 +23,10 @@ function generateBarcode(barcodeInput) {
         JsBarcode(barcodeCanvas, barcodeInput, {
             format: "CODE128", // Tetap gunakan format CODE128 yang mendukung berbagai jenis karakter
             lineColor: "#000",
-            width: 2,
-            height: 100,
-            displayValue: true // Menampilkan teks di bawah barcode
+            width: 4, // Lebar garis barcode (semakin besar, semakin mudah dipindai)
+            height: 100, // Tinggi barcode
+            displayValue: true, // Menampilkan teks di bawah barcode
+            fontSize: 18 // Ukuran font untuk nilai teks
         });
     } catch (error) {
         console.error("Gagal menghasilkan barcode:", error);
@@ -35,27 +36,34 @@ function generateBarcode(barcodeInput) {
 
 // Event listener untuk tombol generate otomatis
 document.getElementById('generateAuto').addEventListener('click', function() {
+    const barcodeCount = parseInt(document.getElementById('barcodeCount').value);
     const intervalInput = document.getElementById('timeInterval').value;
+
+    // Cek apakah jumlah barcode valid
+    if (isNaN(barcodeCount) || barcodeCount < 1 || barcodeCount > 10) {
+        alert('Masukkan jumlah barcode antara 1 hingga 10!');
+        return;
+    }
 
     // Cek apakah interval waktu valid
     const intervalTime = parseInt(intervalInput);
-    if (isNaN(intervalTime) || intervalTime < 15 || intervalTime > 60) {
-        alert('Masukkan waktu interval antara 15 hingga 60 detik!');
+    if (isNaN(intervalTime) || intervalTime < 5 || intervalTime > 60) {
+        alert('Masukkan waktu interval antara 5 hingga 60 detik!');
         return;
     }
 
     // Generate barcode setiap interval waktu yang ditentukan oleh pengguna
-    let elapsedTime = 0; // untuk menghitung waktu
-    const totalInterval = intervalTime * 1000; // total waktu dalam milidetik
+    let generatedCount = 0; // untuk menghitung jumlah barcode yang dihasilkan
     const interval = setInterval(() => {
         const transactionNumber = generateRandomTransactionNumber(); // Menghasilkan nomor transaksi acak
         generateBarcode(transactionNumber); // Menghasilkan barcode
+        generatedCount++;
 
-        elapsedTime += 5000; // menambah waktu 5 detik
-        if (elapsedTime >= totalInterval) { // jika sudah mencapai total waktu
+        // Jika sudah mencapai jumlah barcode yang diinginkan
+        if (generatedCount >= barcodeCount) {
             clearInterval(interval); // menghentikan interval
             alert("Generate otomatis selesai!");
             return;
         }
-    }, 5000); // interval 5 detik
+    }, intervalTime * 1000); // interval sesuai waktu yang ditentukan
 });
