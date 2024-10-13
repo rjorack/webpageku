@@ -1,8 +1,9 @@
-// Fungsi untuk mengubah input menjadi huruf besar secara otomatis
-document.getElementById('barcodeInput').addEventListener('input', function() {
-    const inputElement = document.getElementById('barcodeInput');
-    inputElement.value = inputElement.value.toUpperCase(); // Ubah input menjadi huruf besar
-});
+// Fungsi untuk menghasilkan nomor transaksi acak
+function generateRandomTransactionNumber() {
+    const prefix = "TRX"; // Prefix untuk nomor transaksi
+    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
+    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
+}
 
 // Fungsi untuk menghasilkan barcode
 function generateBarcode(barcodeInput) {
@@ -32,22 +33,9 @@ function generateBarcode(barcodeInput) {
     }
 }
 
-// Event listener untuk tombol generate manual
-document.getElementById('generateManual').addEventListener('click', function() {
-    const barcodeInput = document.getElementById('barcodeInput').value;
-    generateBarcode(barcodeInput);
-});
-
 // Event listener untuk tombol generate otomatis
 document.getElementById('generateAuto').addEventListener('click', function() {
-    const barcodeInput = document.getElementById('barcodeInput').value;
     const intervalInput = document.getElementById('timeInterval').value;
-
-    // Cek apakah input tidak kosong
-    if (barcodeInput.trim() === '') {
-        alert('Silakan masukkan teks atau nomor transaksi sebelum memulai generate otomatis!');
-        return;
-    }
 
     // Cek apakah interval waktu valid
     const intervalTime = parseInt(intervalInput);
@@ -60,7 +48,8 @@ document.getElementById('generateAuto').addEventListener('click', function() {
     let elapsedTime = 0; // untuk menghitung waktu
     const totalInterval = intervalTime * 1000; // total waktu dalam milidetik
     const interval = setInterval(() => {
-        generateBarcode(barcodeInput); // menghasilkan barcode
+        const transactionNumber = generateRandomTransactionNumber(); // Menghasilkan nomor transaksi acak
+        generateBarcode(transactionNumber); // Menghasilkan barcode
 
         elapsedTime += 5000; // menambah waktu 5 detik
         if (elapsedTime >= totalInterval) { // jika sudah mencapai total waktu
