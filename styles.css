@@ -2,7 +2,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #f4f4f4;
-    background-image: url('path/to/your/logo.png'); /* Ganti dengan path logo Anda */
+    background-image: url('https://github.com/WillEnyong/webpageku/raw/main/asset/logo.png'); /* Ganti dengan URL logo Anda */
     background-size: cover; /* Ukuran penuh */
     background-repeat: no-repeat; /* Tidak mengulang */
     background-position: center; /* Pusat */
