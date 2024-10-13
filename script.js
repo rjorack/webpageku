@@ -1,21 +1,20 @@
 // script.js
-document.getElementById('generateQR').addEventListener('click', function() {
-    const qrInput = document.getElementById('qrInput').value;
-    const qrCanvas = document.getElementById('qrCanvas');
-
-    // Kosongkan canvas sebelum menggambar QR Code baru
-    qrCanvas.innerHTML = '';
+document.getElementById('generateBarcode').addEventListener('click', function() {
+    const barcodeInput = document.getElementById('barcodeInput').value;
+    const barcodeCanvas = document.getElementById('barcode');
 
     // Cek apakah input tidak kosong
-    if (qrInput.trim() === '') {
-        alert('Silakan masukkan kode transaksi atau URL!');
+    if (barcodeInput.trim() === '') {
+        alert('Silakan masukkan nomor transaksi!');
         return;
     }
 
-    // Generate QR Code untuk transaksi atau URL
-    $(qrCanvas).qrcode({
-        text: qrInput,
-        width: 150,
-        height: 150
+    // Generate barcode menggunakan JsBarcode
+    JsBarcode(barcodeCanvas, barcodeInput, {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 100,
+        displayValue: true
     });
 });
