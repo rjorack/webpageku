@@ -1,3 +1,10 @@
+// Fungsi untuk mengubah input menjadi huruf besar secara otomatis
+document.getElementById('barcodeInput').addEventListener('input', function() {
+    const inputElement = document.getElementById('barcodeInput');
+    inputElement.value = inputElement.value.toUpperCase(); // Ubah input menjadi huruf besar
+});
+
+// Event listener untuk tombol generate barcode
 document.getElementById('generateBarcode').addEventListener('click', function() {
     const barcodeInput = document.getElementById('barcodeInput').value;
     const barcodeCanvas = document.getElementById('barcode');
@@ -14,7 +21,7 @@ document.getElementById('generateBarcode').addEventListener('click', function() 
     try {
         // Generate barcode menggunakan JsBarcode
         JsBarcode(barcodeCanvas, barcodeInput, {
-            format: "CODE128", // Tetap gunakan format CODE128 yang mendukung semua karakter
+            format: "CODE128", // Tetap gunakan format CODE128 yang mendukung berbagai jenis karakter
             lineColor: "#000",
             width: 2,
             height: 100,
