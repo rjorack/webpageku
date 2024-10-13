@@ -1,3 +1,4 @@
+// script.js
 document.getElementById('generateQR').addEventListener('click', function() {
     const qrInput = document.getElementById('qrInput').value;
     const qrCanvas = document.getElementById('qrCanvas');
