@@ -3,64 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bukti Transaksi Supermarket</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Link jQuery dan JsBarcode -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <title>Struk Supermarket dengan Barcode</title>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Jika Anda ingin menambahkan styling -->
 </head>
 <body>
-    <div class="receipt-container">
+    <div style="text-align: center;">
         <h1>Supermarket XYZ</h1>
         <p><strong>Tanggal:</strong> 13 Oktober 2024</p>
         <p><strong>Nomor Transaksi:</strong> TRX123456</p>
         
-        <div class="item-list">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Qty</th>
-                        <th>Harga</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Indomie Goreng</td>
-                        <td>2</td>
-                        <td>Rp6.000</td>
-                    </tr>
-                    <tr>
-                        <td>Beras 5kg</td>
-                        <td>1</td>
-                        <td>Rp65.000</td>
-                    </tr>
-                    <tr>
-                        <td>Minyak Goreng 1L</td>
-                        <td>1</td>
-                        <td>Rp20.000</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2"><strong>Total</strong></td>
-                        <td><strong>Rp91.000</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
+        <table style="margin: 0 auto; text-align: left;">
+            <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Harga</th>
+            </tr>
+            <tr>
+                <td>Indomie Goreng</td>
+                <td>2</td>
+                <td>Rp6.000</td>
+            </tr>
+            <tr>
+                <td>Beras 5kg</td>
+                <td>1</td>
+                <td>Rp65.000</td>
+            </tr>
+            <tr>
+                <td>Minyak Goreng 1L</td>
+                <td>1</td>
+                <td>Rp20.000</td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Total</strong></td>
+                <td><strong>Rp91.000</strong></td>
+            </tr>
+        </table>
 
-        <div class="barcode-section">
-            <p>Nomor Transaksi (Barcode)</p>
-            <svg id="barcode"></svg>
-        </div>
+        <p><strong>Nomor Transaksi (Barcode)</strong></p>
+        <svg id="barcode"></svg>
 
-        <input type="text" id="barcodeInput" placeholder="Masukkan nomor transaksi">
-        <button id="generateBarcode">Generate Barcode</button>
-
-        <p class="thanks-message">Terima kasih telah berbelanja di Supermarket XYZ!</p>
+        <!-- Input untuk memasukkan nomor transaksi -->
+        <p>
+            <input type="text" id="barcodeInput" placeholder="Masukkan teks atau nomor transaksi">
+            <button id="generateBarcode">Generate Barcode</button>
+        </p>
+        <p>Terima kasih telah berbelanja di Supermarket XYZ!</p>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Memasukkan file JavaScript -->
 </body>
 </html>
