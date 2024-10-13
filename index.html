@@ -3,53 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Struk Supermarket dengan Barcode</title>
+    <title>WINSNIP</title> <!-- Judul diubah menjadi WINSNIP -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Jika Anda ingin menambahkan styling -->
+    <link rel="stylesheet" href="styles.css"> <!-- Memasukkan file CSS -->
 </head>
 <body>
-    <div style="text-align: center;">
-        <h1>Supermarket XYZ</h1>
-        <p><strong>Tanggal:</strong> 13 Oktober 2024</p>
-        <p><strong>Nomor Transaksi:</strong> TRX123456</p>
+    <div class="container">
+        <h1>WINSNIP</h1> <!-- Judul ditampilkan di halaman -->
         
-        <table style="margin: 0 auto; text-align: left;">
-            <tr>
-                <th>Item</th>
-                <th>Qty</th>
-                <th>Harga</th>
-            </tr>
-            <tr>
-                <td>Indomie Goreng</td>
-                <td>2</td>
-                <td>Rp6.000</td>
-            </tr>
-            <tr>
-                <td>Beras 5kg</td>
-                <td>1</td>
-                <td>Rp65.000</td>
-            </tr>
-            <tr>
-                <td>Minyak Goreng 1L</td>
-                <td>1</td>
-                <td>Rp20.000</td>
-            </tr>
-            <tr>
-                <td colspan="2"><strong>Total</strong></td>
-                <td><strong>Rp91.000</strong></td>
-            </tr>
-        </table>
-
-        <p><strong>Nomor Transaksi (Barcode)</strong></p>
+        <p class="barcode-label">Nomor Transaksi (Barcode)</p>
         <svg id="barcode"></svg>
 
         <!-- Input untuk memasukkan nomor transaksi -->
-        <p>
+        <div class="input-section">
             <input type="text" id="barcodeInput" placeholder="Masukkan teks atau nomor transaksi">
-            <button id="generateManual">Generate Manual</button>
-            <button id="generateAuto">Generate Otomatis</button>
-        </p>
-        <p>Terima kasih telah berbelanja di Supermarket XYZ!</p>
+            <button id="generateManual" class="long-button">Generate Manual</button>
+            <button id="generateAuto" class="long-button">Generate Otomatis</button>
+        </div>
+        <p class="thank-you">Terima kasih telah berbelanja!</p>
     </div>
 
     <script src="script.js"></script> <!-- Memasukkan file JavaScript -->
