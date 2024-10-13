@@ -16,15 +16,8 @@ body {
     text-align: center;
 }
 
-/* Centering the logo */
-.logo-container {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 200px; /* Sesuaikan ukuran logo */
-    height: auto;
+h1 {
+    color: #4CAF50;
 }
 
 .barcode-label, .thank-you {
@@ -57,18 +50,28 @@ input[type="text"], input[type="number"] {
     background-color: #45a049;
 }
 
-/* Warna teks dan background untuk link tambahan */
+/* Memastikan link tambahan berada di center dan memisahkannya */
 .extra-links {
     margin-top: 10px;
     font-size: 16px;
+    text-align: center; /* Menjadikan teks center */
+}
+
+.extra-links p {
     background-color: black;
     padding: 10px;
     border-radius: 5px;
     color: white;
+    margin: 5px 0;
 }
 
 .extra-links a {
     color: white;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
 }
 
 svg {
