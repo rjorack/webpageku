@@ -3,37 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice QR Code Generator</title>
+    <title>Bukti Transaksi Supermarket</title>
     <link rel="stylesheet" href="style.css">
     <!-- Link jQuery dan jQuery.qrcode -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
-    <div class="invoice-container">
-        <h1>Invoice #12345</h1>
-        <div class="invoice-details">
-            <p><strong>Tanggal:</strong> 13 Oktober 2024</p>
-            <p><strong>Nama:</strong> John Doe</p>
-            <p><strong>Total Pembayaran:</strong> Rp1.500.000</p>
-        </div>
+    <div class="receipt-container">
+        <h1>Supermarket XYZ</h1>
+        <p><strong>Tanggal:</strong> 13 Oktober 2024</p>
+        <p><strong>Nomor Transaksi:</strong> TRX123456</p>
         
-        <input type="text" id="qrInput" placeholder="Masukkan kode pembayaran atau URL">
-        <button id="generateQR">Generate QR Code</button>
+        <div class="item-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Indomie Goreng</td>
+                        <td>2</td>
+                        <td>Rp6.000</td>
+                    </tr>
+                    <tr>
+                        <td>Beras 5kg</td>
+                        <td>1</td>
+                        <td>Rp65.000</td>
+                    </tr>
+                    <tr>
+                        <td>Minyak Goreng 1L</td>
+                        <td>1</td>
+                        <td>Rp20.000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Total</strong></td>
+                        <td><strong>Rp91.000</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
         <div class="barcode-section">
-            <h2>Scan untuk Pembayaran</h2>
+            <p>Scan untuk pelacakan</p>
             <div id="qrCanvas"></div>
         </div>
-    </div>
 
-    <footer>
-        <p>Terima kasih telah berbelanja! <br> Follow us on: 
-            <a href="#">Website</a> | 
-            <a href="#">Twitter</a> | 
-            <a href="#">Telegram</a>
-        </p>
-    </footer>
+        <input type="text" id="qrInput" placeholder="Masukkan kode transaksi atau URL">
+        <button id="generateQR">Generate QR Code</button>
+
+        <p class="thanks-message">Terima kasih telah berbelanja di Supermarket XYZ!</p>
+    </div>
 
     <script src="script.js"></script>
 </body>
