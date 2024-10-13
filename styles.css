@@ -3,7 +3,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #f4f4f4;
     background-image: url('https://github.com/WillEnyong/webpageku/raw/main/asset/logo.png'); /* Ganti dengan URL logo Anda */
-    background-size: cover; /* Ukuran penuh */
+    background-size: contain; /* Ukuran logo sesuai dengan kontainer */
     background-repeat: no-repeat; /* Tidak mengulang */
     background-position: center; /* Pusat */
     text-align: center;
