@@ -1,45 +1,54 @@
-/* styles.css */
-
-/* Gaya untuk body */
+/* style.css */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
 }
 
-/* Gaya untuk header */
+.container {
+    margin-top: 50px;
+}
+
 h1 {
-    margin-bottom: 1rem;
+    color: #6a0dad;
 }
 
-/* Gaya untuk input */
-input[type="text"] {
-    transition: border-color 0.3s;
+input {
+    padding: 10px;
+    width: 60%;
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
-input[type="text"]:focus {
-    border-color: #6b46c1; /* Warna ungu */
-    outline: none;
-}
-
-/* Gaya untuk tombol */
 button {
-    transition: background-color 0.3s;
+    background-color: #6a0dad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #5a3e9d; /* Warna ungu gelap */
+    background-color: #5e009a;
 }
 
-/* Gaya untuk canvas */
-canvas {
-    margin-top: 1rem;
-    border: 2px solid #6b46c1; /* Warna ungu */
-    border-radius: 0.5rem;
+#qrCanvas {
+    margin-top: 20px;
 }
 
-/* Gaya untuk footer */
 footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 1rem 0;
+    margin-top: 40px;
+    background-color: #6a0dad;
+    color: white;
+    padding: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
