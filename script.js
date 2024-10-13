@@ -5,6 +5,12 @@ document.getElementById('generateQR').addEventListener('click', function() {
     // Kosongkan canvas sebelum menggambar QR Code baru
     qrCanvas.innerHTML = '';
 
+    // Cek apakah input tidak kosong
+    if (qrInput.trim() === '') {
+        alert('Silakan masukkan teks atau URL!');
+        return;
+    }
+
     // Generate QR Code
     $(qrCanvas).qrcode({
         text: qrInput,
