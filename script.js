@@ -4,9 +4,8 @@ document.getElementById('barcodeInput').addEventListener('input', function() {
     inputElement.value = inputElement.value.toUpperCase(); // Ubah input menjadi huruf besar
 });
 
-// Event listener untuk tombol generate barcode
-document.getElementById('generateBarcode').addEventListener('click', function() {
-    const barcodeInput = document.getElementById('barcodeInput').value;
+// Fungsi untuk menghasilkan barcode
+function generateBarcode(barcodeInput) {
     const barcodeCanvas = document.getElementById('barcode');
 
     // Kosongkan konten barcode sebelumnya
@@ -31,4 +30,33 @@ document.getElementById('generateBarcode').addEventListener('click', function() 
         console.error("Gagal menghasilkan barcode:", error);
         alert("Terjadi kesalahan saat menghasilkan barcode. Cek input Anda.");
     }
+}
+
+// Event listener untuk tombol generate manual
+document.getElementById('generateManual').addEventListener('click', function() {
+    const barcodeInput = document.getElementById('barcodeInput').value;
+    generateBarcode(barcodeInput);
+});
+
+// Event listener untuk tombol generate otomatis
+document.getElementById('generateAuto').addEventListener('click', function() {
+    const barcodeInput = document.getElementById('barcodeInput').value;
+
+    // Cek apakah input tidak kosong
+    if (barcodeInput.trim() === '') {
+        alert('Silakan masukkan teks atau nomor transaksi sebelum memulai generate otomatis!');
+        return;
+    }
+
+    // Generate barcode setiap 5 detik selama 1 menit
+    let elapsedTime = 0; // untuk menghitung waktu
+    const interval = setInterval(() => {
+        if (elapsedTime >= 60) { // 60 detik
+            clearInterval(interval); // menghentikan interval setelah 1 menit
+            alert("Generate otomatis selesai!");
+            return;
+        }
+        generateBarcode(barcodeInput); // menghasilkan barcode
+        elapsedTime += 5; // menambah waktu
+    }, 5000); // interval 5 detik
 });
