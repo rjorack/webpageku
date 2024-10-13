@@ -1,4 +1,4 @@
-/* style.css */
+/* styles.css */
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #f4f4f4;
@@ -10,72 +10,42 @@ body {
     padding: 20px;
 }
 
-.receipt-container {
-    width: 400px;
+.container {
+    max-width: 600px;
     margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
+.barcode-label {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin: 20px 0;
 }
 
-p {
-    font-size: 14px;
-    margin: 5px 0;
+.input-section {
+    margin: 20px 0;
 }
 
-.item-list table {
-    width: 100%;
-    margin-top: 10px;
-    border-collapse: collapse;
-}
-
-.item-list th, .item-list td {
-    border-bottom: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-    font-size: 14px;
-}
-
-.item-list tfoot td {
-    border-top: 2px solid #000;
-    font-weight: bold;
-}
-
-.barcode-section {
-    margin-top: 20px;
-}
-
-#barcode {
-    margin: 0 auto;
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-}
-
-button {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
-    margin-top: 10px;
-    border: none;
+.long-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
     cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: inline-block; /* Mengubah menjadi inline-block */
 }
 
-button:hover {
-    background-color: #555;
+.thank-you {
+    margin-top: 30px;
+    font-size: 18px;
 }
 
-.thanks-message {
-    margin-top: 20px;
-    font-size: 14px;
+/* Mengatur ukuran barcode */
+svg {
+    width: 10cm; /* Lebar barcode 10 cm */
+    height: 7cm; /* Tinggi barcode 7 cm */
 }
 
 /* Tambahan untuk footer */
