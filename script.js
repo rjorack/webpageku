@@ -23,8 +23,8 @@ function generateBarcode(barcodeInput) {
         JsBarcode(barcodeCanvas, barcodeInput, {
             format: "CODE128", // Tetap gunakan format CODE128 yang mendukung berbagai jenis karakter
             lineColor: "#000",
-            width: 4, // Lebar garis barcode (semakin besar, semakin mudah dipindai)
-            height: 100, // Tinggi barcode
+            width: 5, // Lebar garis barcode (semakin besar, semakin mudah dipindai)
+            height: 150, // Tinggi barcode (dalam piksel)
             displayValue: true, // Menampilkan teks di bawah barcode
             fontSize: 18 // Ukuran font untuk nilai teks
         });
