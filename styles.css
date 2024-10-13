@@ -28,10 +28,10 @@ h1 {
     margin: 20px 0;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"] {
     padding: 10px;
     width: 80%;
-    margin-right: 10px;
+    margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -48,4 +48,23 @@ input[type="text"] {
 
 .long-button:hover {
     background-color: #45a049;
+}
+
+/* Warna teks dan background untuk link tambahan */
+.extra-links {
+    margin-top: 10px;
+    font-size: 16px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.extra-links a {
+    color: white;
+}
+
+svg {
+    width: 10cm;
+    height: 7cm;
 }
