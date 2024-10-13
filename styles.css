@@ -18,6 +18,15 @@ body {
 
 h1 {
     color: #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Jarak antara logo dan teks */
+}
+
+.logo {
+    height: 35px; /* Sesuaikan tinggi logo dengan teks */
+    width: auto;
 }
 
 .barcode-label, .thank-you {
