@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINSNIP</title> <!-- Judul diubah menjadi WINSNIP -->
+    <title>WINSNIP</title>
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
     <link rel="stylesheet" href="styles.css"> <!-- Memasukkan file CSS -->
 </head>
 <body>
     <div class="container">
-        <h1>WINSNIP</h1> <!-- Judul ditampilkan di halaman -->
-        
+        <h1>WINSNIP</h1>
+
         <p class="barcode-label">Nomor Transaksi (Barcode)</p>
         <svg id="barcode"></svg>
 
-        <!-- Input untuk memasukkan nomor transaksi -->
         <div class="input-section">
             <input type="text" id="barcodeInput" placeholder="Masukkan teks atau nomor transaksi">
             <button id="generateManual" class="long-button">Generate Manual</button>
+            <input type="number" id="timeInterval" placeholder="Detik" min="15" max="60">
             <button id="generateAuto" class="long-button">Generate Otomatis</button>
         </div>
         <p class="thank-you">Terima kasih telah berbelanja!</p>
     </div>
 
-    <script src="script.js"></script> <!-- Memasukkan file JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
