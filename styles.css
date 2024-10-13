@@ -26,8 +26,8 @@ body {
 }
 
 .long-button {
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 10px 15px; /* Mengurangi padding untuk memperpendek tombol */
+    font-size: 16px; /* Ukuran font tombol */
     margin: 5px;
     cursor: pointer;
     background-color: #4CAF50;
@@ -44,7 +44,7 @@ body {
 
 /* Mengatur ukuran barcode */
 svg {
-    width: 10cm; /* Lebar barcode 10 cm */
+    width: 10cm; /* Lebar barcode 11 cm */
     height: 7cm; /* Tinggi barcode 7 cm */
 }
 
