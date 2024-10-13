@@ -8,11 +8,11 @@ document.getElementById('generateQR').addEventListener('click', function() {
 
     // Cek apakah input tidak kosong
     if (qrInput.trim() === '') {
-        alert('Silakan masukkan teks atau URL!');
+        alert('Silakan masukkan kode pembayaran atau URL!');
         return;
     }
 
-    // Generate QR Code
+    // Generate QR Code dengan ukuran yang lebih besar
     $(qrCanvas).qrcode({
         text: qrInput,
         width: 200,
