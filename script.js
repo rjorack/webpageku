@@ -8,6 +8,9 @@ document.getElementById('generateBarcode').addEventListener('click', function() 
         return;
     }
 
+    // Kosongkan konten barcode sebelumnya
+    barcodeCanvas.innerHTML = '';
+
     try {
         // Generate barcode menggunakan JsBarcode
         JsBarcode(barcodeCanvas, barcodeInput, {
