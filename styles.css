@@ -1,68 +1,51 @@
-/* styles.css */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #f4f4f4;
-    background-image: url('https://github.com/WillEnyong/webpageku/raw/main/asset/logo.png'); /* Ganti dengan URL logo Anda */
-    background-size: contain; /* Ukuran logo sesuai dengan kontainer */
-    background-repeat: no-repeat; /* Tidak mengulang */
-    background-position: center; /* Pusat */
-    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
     padding: 20px;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
     text-align: center;
 }
 
-.barcode-label {
-    font-size: 24px;
-    margin: 20px 0;
+h1 {
+    color: #4CAF50;
+}
+
+.barcode-label, .thank-you {
+    margin: 10px 0;
 }
 
 .input-section {
     margin: 20px 0;
 }
 
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 .long-button {
-    padding: 10px 15px; /* Mengurangi padding untuk memperpendek tombol */
-    font-size: 16px; /* Ukuran font tombol */
-    margin: 5px;
-    cursor: pointer;
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
-    display: inline-block; /* Mengubah menjadi inline-block */
+    cursor: pointer;
+    width: 100%;
 }
 
-.thank-you {
-    margin-top: 30px;
-    font-size: 18px;
-}
-
-/* Mengatur ukuran barcode */
-svg {
-    width: 10cm; /* Lebar barcode 11 cm */
-    height: 7cm; /* Tinggi barcode 7 cm */
-}
-
-/* Tambahan untuk footer */
-.footer {
-    background-color: #6a1b9a; /* Warna ungu */
-    color: white;
-    padding: 20px 0; /* Tambah padding atas dan bawah */
-    margin-top: 20px;
-    text-align: center; /* Rata tengah */
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px; /* Tambah jarak antar tautan */
-}
-
-.footer a:hover {
-    text-decoration: underline;
+.long-button:hover {
+    background-color: #45a049;
 }
