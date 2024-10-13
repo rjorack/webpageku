@@ -1,45 +1,74 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f9f9f9;
     text-align: center;
-    background-color: #f4f4f4;
 }
 
-.container {
-    margin-top: 50px;
+.invoice-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
 h1 {
-    color: #6a0dad;
+    color: #333;
+    font-size: 24px;
+}
+
+.invoice-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
 }
 
 input {
     padding: 10px;
-    width: 60%;
-    margin-bottom: 10px;
+    width: 100%;
+    margin: 10px 0;
     font-size: 16px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
 }
 
 button {
-    background-color: #6a0dad;
+    background-color: #333;
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 button:hover {
-    background-color: #5e009a;
+    background-color: #555;
+}
+
+.barcode-section {
+    text-align: center;
+}
+
+.barcode-section h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 #qrCanvas {
-    margin-top: 20px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
 }
 
 footer {
-    margin-top: 40px;
-    background-color: #6a0dad;
+    margin-top: 20px;
+    background-color: #333;
     color: white;
     padding: 10px;
 }
