@@ -1,15 +1,11 @@
-// Fungsi untuk menghasilkan nomor transaksi acak
-function generateRandomTransactionNumber() {
-    const prefix = "TRX"; // Prefix untuk nomor transaksi
-    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
-    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
-}
+// Menampilkan tanggal saat ini di halaman
+const date = new Date();
+const currentDate = date.toISOString().slice(0, 10); // Format: YYYY-MM-DD
+document.getElementById('currentDate').innerText = `Tanggal: ${currentDate}`;
 
-// Fungsi untuk mendapatkan tanggal saat ini dalam format yang diinginkan
-function getCurrentDate() {
-    const date = new Date();
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return date.toLocaleDateString('id-ID', options); // Format tanggal Indonesia
+// Fungsi untuk menghasilkan total bayar acak
+function generateRandomAmount() {
+    return Math.floor(1000 + Math.random() * 9000); // Menghasilkan total bayar antara 1000 hingga 10000
 }
 
 // Fungsi untuk menghasilkan barcode
@@ -25,15 +21,22 @@ function generateBarcode(barcodeInput) {
         return;
     }
 
+    // Generate total bayar acak
+    const amount = generateRandomAmount(); 
+    document.getElementById('totalAmount').innerText = `Total Bayar: Rp ${amount}`; // Update total bayar
+
+    // Menggabungkan informasi untuk barcode
+    const barcodeData = `${currentDate} | WillCloud Market | ${amount} | ${barcodeInput}`;
+
     try {
         // Generate barcode menggunakan JsBarcode
-        JsBarcode(barcodeCanvas, barcodeInput, {
-            format: "CODE128", // Tetap gunakan format CODE128 yang mendukung berbagai jenis karakter
+        JsBarcode(barcodeCanvas, barcodeData, {
+            format: "CODE128", // Format barcode
             lineColor: "#000",
-            width: 5, // Lebar garis barcode (semakin besar, semakin mudah dipindai)
-            height: 150, // Tinggi barcode (dalam piksel)
+            width: 2, // Lebar garis barcode
+            height: 100, // Tinggi barcode
             displayValue: true, // Menampilkan teks di bawah barcode
-            fontSize: 18 // Ukuran font untuk nilai teks
+            fontSize: 14 // Ukuran font untuk nilai teks
         });
     } catch (error) {
         console.error("Gagal menghasilkan barcode:", error);
@@ -43,17 +46,8 @@ function generateBarcode(barcodeInput) {
 
 // Event listener untuk tombol generate manual
 document.getElementById('generateManual').addEventListener('click', function() {
-    const manualInput = document.getElementById('manualInput').value;
-
-    // Ambil tanggal saat ini
-    const currentDate = getCurrentDate();
-    const marketName = "WillCloud Market"; // Nama pasar yang statis
-    const amount = manualInput; // Jumlah bayar yang diambil dari input manual
-
-    // Gabungkan informasi menjadi satu string
-    const barcodeData = `${currentDate} | ${marketName} | ${amount}`;
-
-    generateBarcode(barcodeData); // Menghasilkan barcode berdasarkan input manual
+    const manualInput = document.getElementById('manualInput').value; // Input manual
+    generateBarcode(manualInput); // Menghasilkan barcode berdasarkan input manual
 });
 
 // Event listener untuk tombol generate otomatis
@@ -78,16 +72,7 @@ document.getElementById('generateAuto').addEventListener('click', function() {
     let generatedCount = 0; // untuk menghitung jumlah barcode yang dihasilkan
     const interval = setInterval(() => {
         const transactionNumber = generateRandomTransactionNumber(); // Menghasilkan nomor transaksi acak
-        
-        // Ambil tanggal saat ini
-        const currentDate = getCurrentDate();
-        const marketName = "WillCloud Market"; // Nama pasar yang statis
-        const amount = Math.floor(Math.random() * 1000) + 1; // Jumlah bayar acak antara 1 hingga 1000
-
-        // Gabungkan informasi menjadi satu string
-        const barcodeData = `${currentDate} | ${marketName} | ${amount}`;
-
-        generateBarcode(barcodeData); // Menghasilkan barcode
+        generateBarcode(transactionNumber); // Menghasilkan barcode
         generatedCount++;
 
         // Jika sudah mencapai jumlah barcode yang diinginkan
@@ -98,3 +83,10 @@ document.getElementById('generateAuto').addEventListener('click', function() {
         }
     }, intervalTime * 1000); // interval sesuai waktu yang ditentukan
 });
+
+// Fungsi untuk menghasilkan nomor transaksi acak
+function generateRandomTransactionNumber() {
+    const prefix = "TRX"; // Prefix untuk nomor transaksi
+    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
+    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
+}
