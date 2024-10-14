@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WINSNIP</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS eksternal -->
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
-    <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan file CSS eksternal -->
 </head>
 <body>
     <div class="container">
         <h1>WINSNIP</h1>
-        <p class="barcode-label" style="color: black; font-weight: bold;">WillCloud Market</p>
-        <p id="dateLabel"></p> <!-- Menampilkan tanggal di sini -->
-        <p id="amountLabel">Jumlah Bayar: $ 0</p> <!-- Menampilkan jumlah bayar di sini -->
-        <svg id="barcode"></svg>
+        <p class="barcode-label">WillCloud Market</p>
+        <p id="dateLabel"></p> <!-- Tanggal saat ini akan ditampilkan di sini -->
+        <p id="amountLabel">Jumlah Bayar: $ 0</p> <!-- Jumlah bayar akan ditampilkan di sini -->
 
-        <br><br><br>
+        <div class="barcode-section">
+            <svg id="barcode"></svg>
+        </div>
 
         <div class="input-section">
             <input type="text" id="manualInput" placeholder="Masukkan Nomor Transaksi">
@@ -28,13 +29,13 @@
         
         <p class="thank-you">Created By WINSNIP</p>
         
-        <!-- Memisahkan teks sesuai permintaan dan membuatnya center -->
+        <!-- Link Footer -->
         <div class="extra-links">
             <p>Jangan Lupa Join <a href="https://t.me/winsnip_chat" target="_blank">Grup Telegram</a></p>
             <p>Seller VPS/RDP Murah Hanya di <a href="https://t.me/EnyongBae" target="_blank">WillCloud</a></p>
         </div>
     </div>
 
-    <script src="script.js"></script> <!-- Menghubungkan file JavaScript -->
+    <script src="script.js"></script> <!-- Link ke file JS eksternal -->
 </body>
 </html>
