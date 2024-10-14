@@ -1,47 +1,32 @@
-// Menampilkan tanggal saat ini di halaman
-const date = new Date();
-const currentDate = date.toISOString().slice(0, 10); // Format: YYYY-MM-DD
-document.getElementById('currentDate').innerText = `Tanggal: ${currentDate}`;
 
-// Fungsi untuk menghasilkan total bayar acak
-function generateRandomAmount() {
-    return Math.floor(1000 + Math.random() * 9000); // Menghasilkan total bayar antara 1000 hingga 10000
-}
-
-// Fungsi untuk menghasilkan nomor transaksi acak
 function generateRandomTransactionNumber() {
-    const prefix = "TRX"; // Prefix untuk nomor transaksi
-    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
-    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
+    const prefix = "TRX"; 
+    const randomNumber = Math.floor(100000 + Math.random() * 900000); 
+    return `${prefix}${randomNumber}`; 
 }
 
-// Fungsi untuk menghasilkan barcode
+
 function generateBarcode(barcodeInput) {
     const barcodeCanvas = document.getElementById('barcode');
 
-    // Kosongkan konten barcode sebelumnya
+    
     barcodeCanvas.innerHTML = '';
 
-    // Cek apakah input tidak kosong
+    
     if (barcodeInput.trim() === '') {
         alert('Silakan masukkan teks atau nomor transaksi!');
         return;
     }
 
-    // Generate total bayar acak
-    const amount = generateRandomAmount(); 
-    document.getElementById('totalAmount').innerText = `Total Bayar: Rp ${amount}`; // Update total bayar
-
-    // Menggunakan input manual untuk barcode
     try {
-        // Generate barcode menggunakan JsBarcode
+        
         JsBarcode(barcodeCanvas, barcodeInput, {
-            format: "CODE128", // Format barcode
+            format: "CODE128", 
             lineColor: "#000",
-            width: 2, // Lebar garis barcode
-            height: 100, // Tinggi barcode
-            displayValue: true, // Menampilkan teks di bawah barcode
-            fontSize: 14 // Ukuran font untuk nilai teks
+            width: 1.5, 
+            height: 80, 
+            displayValue: true, 
+            fontSize: 12 
         });
     } catch (error) {
         console.error("Gagal menghasilkan barcode:", error);
@@ -51,7 +36,7 @@ function generateBarcode(barcodeInput) {
 
 // Event listener untuk tombol generate manual
 document.getElementById('generateManual').addEventListener('click', function() {
-    const manualInput = document.getElementById('manualInput').value; // Input manual
+    const manualInput = document.getElementById('manualInput').value;
     generateBarcode(manualInput); // Menghasilkan barcode berdasarkan input manual
 });
 
@@ -73,18 +58,18 @@ document.getElementById('generateAuto').addEventListener('click', function() {
         return;
     }
 
-    // Generate barcode setiap interval waktu yang ditentukan oleh pengguna
-    let generatedCount = 0; // untuk menghitung jumlah barcode yang dihasilkan
+    
+    let generatedCount = 0;
     const interval = setInterval(() => {
-        const transactionNumber = generateRandomTransactionNumber(); // Menghasilkan nomor transaksi acak
-        generateBarcode(transactionNumber); // Menghasilkan barcode
+        const transactionNumber = generateRandomTransactionNumber(); 
+        generateBarcode(transactionNumber); 
         generatedCount++;
 
-        // Jika sudah mencapai jumlah barcode yang diinginkan
+        
         if (generatedCount >= barcodeCount) {
-            clearInterval(interval); // menghentikan interval
+            clearInterval(interval); 
             alert("Generate otomatis selesai!");
             return;
         }
-    }, intervalTime * 1000); // interval sesuai waktu yang ditentukan
+    }, intervalTime * 1000); 
 });
