@@ -8,6 +8,13 @@ function generateRandomAmount() {
     return Math.floor(1000 + Math.random() * 9000); // Menghasilkan total bayar antara 1000 hingga 10000
 }
 
+// Fungsi untuk menghasilkan nomor transaksi acak
+function generateRandomTransactionNumber() {
+    const prefix = "TRX"; // Prefix untuk nomor transaksi
+    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
+    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
+}
+
 // Fungsi untuk menghasilkan barcode
 function generateBarcode(barcodeInput) {
     const barcodeCanvas = document.getElementById('barcode');
@@ -25,12 +32,10 @@ function generateBarcode(barcodeInput) {
     const amount = generateRandomAmount(); 
     document.getElementById('totalAmount').innerText = `Total Bayar: Rp ${amount}`; // Update total bayar
 
-    // Menggabungkan informasi untuk barcode
-    const barcodeData = `${currentDate} | WillCloud Market | ${amount} | ${barcodeInput}`;
-
+    // Menggunakan input manual untuk barcode
     try {
         // Generate barcode menggunakan JsBarcode
-        JsBarcode(barcodeCanvas, barcodeData, {
+        JsBarcode(barcodeCanvas, barcodeInput, {
             format: "CODE128", // Format barcode
             lineColor: "#000",
             width: 2, // Lebar garis barcode
@@ -83,10 +88,3 @@ document.getElementById('generateAuto').addEventListener('click', function() {
         }
     }, intervalTime * 1000); // interval sesuai waktu yang ditentukan
 });
-
-// Fungsi untuk menghasilkan nomor transaksi acak
-function generateRandomTransactionNumber() {
-    const prefix = "TRX"; // Prefix untuk nomor transaksi
-    const randomNumber = Math.floor(100000 + Math.random() * 900000); // Membuat nomor acak
-    return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
-}
