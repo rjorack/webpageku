@@ -1,4 +1,3 @@
-
 // Menampilkan tanggal saat ini
 function displayCurrentDate() {
     const dateLabel = document.getElementById('dateLabel');
