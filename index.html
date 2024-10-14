@@ -1,41 +1,81 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WINSNIP</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS eksternal -->
-    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <h1>WINSNIP</h1>
-        <p class="barcode-label">WillCloud Market</p>
-        <p id="dateLabel"></p> <!-- Tanggal saat ini akan ditampilkan di sini -->
-        <p id="amountLabel">Jumlah Bayar: $ 0</p> <!-- Jumlah bayar akan ditampilkan di sini -->
 
-        <div class="barcode-section">
-            <svg id="barcode"></svg>
-        </div>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
 
-        <div class="input-section">
-            <input type="text" id="manualInput" placeholder="Masukkan Nomor Transaksi">
-            <button id="generateManual" class="long-button">Generate Manual</button>
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
 
-            <input type="number" id="barcodeCount" placeholder="Jumlah Barcode" min="1" max="50">
-            <input type="number" id="timeInterval" placeholder="Detik" min="5" max="60">
-            <button id="generateAuto" class="long-button">Generate Otomatis</button>
-        </div>
-        
-        <p class="thank-you">Created By WINSNIP</p>
-        
-        <!-- Link Footer -->
-        <div class="extra-links">
-            <p>Jangan Lupa Join <a href="https://t.me/winsnip_chat" target="_blank">Grup Telegram</a></p>
-            <p>Seller VPS/RDP Murah Hanya di <a href="https://t.me/EnyongBae" target="_blank">WillCloud</a></p>
-        </div>
-    </div>
+h1 {
+    color: #4CAF50;
+}
 
-    <script src="script.js"></script> <!-- Link ke file JS eksternal -->
-</body>
-</html>
+.barcode-label, .thank-you {
+    margin: 10px 0;
+}
+
+.input-section {
+    margin: 20px 0;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    width: 80%;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.long-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.long-button:hover {
+    background-color: #45a049;
+}
+
+/* Memastikan link tambahan berada di center dan memisahkannya */
+.extra-links {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center; /* Menjadikan teks center */
+}
+
+.extra-links p {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin: 5px 0;
+}
+
+.extra-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+}
+
+svg {
+    width: 10cm;
+    height: 7cm;
+}
