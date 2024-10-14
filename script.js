@@ -5,6 +5,16 @@ function generateRandomTransactionNumber() {
     return `${prefix}${randomNumber}`; // Menggabungkan prefix dan nomor acak
 }
 
+// Fungsi untuk menghasilkan jumlah bayar acak
+function generateRandomAmount() {
+    return Math.floor(Math.random() * 100000) + 1; // Menghasilkan jumlah bayar acak antara 1 dan 100000
+}
+
+// Fungsi untuk menghasilkan tanggal saat ini
+function getCurrentDate() {
+    return new Date().toLocaleDateString(); // Mengambil tanggal lokal
+}
+
 // Fungsi untuk menghasilkan barcode
 function generateBarcode(barcodeInput) {
     const barcodeCanvas = document.getElementById('barcode');
@@ -21,10 +31,10 @@ function generateBarcode(barcodeInput) {
     try {
         // Generate barcode menggunakan JsBarcode
         JsBarcode(barcodeCanvas, barcodeInput, {
-            format: "CODE128", // Tetap gunakan format CODE128 yang mendukung berbagai jenis karakter
+            format: "CODE128", // Format barcode
             lineColor: "#000",
-            width: 5, // Lebar garis barcode (semakin besar, semakin mudah dipindai)
-            height: 150, // Tinggi barcode (dalam piksel)
+            width: 5, // Lebar garis barcode
+            height: 150, // Tinggi barcode
             displayValue: true, // Menampilkan teks di bawah barcode
             fontSize: 18 // Ukuran font untuk nilai teks
         });
@@ -62,7 +72,13 @@ document.getElementById('generateAuto').addEventListener('click', function() {
     let generatedCount = 0; // untuk menghitung jumlah barcode yang dihasilkan
     const interval = setInterval(() => {
         const transactionNumber = generateRandomTransactionNumber(); // Menghasilkan nomor transaksi acak
-        generateBarcode(transactionNumber); // Menghasilkan barcode
+        const marketName = "WillCloud Market"; // Nama pasar
+        const paymentAmount = generateRandomAmount(); // Menghasilkan jumlah bayar acak
+        const currentDate = getCurrentDate(); // Mengambil tanggal saat ini
+
+        // Format barcode: "Tanggal | Nama Market | Jumlah Bayar"
+        const barcodeData = `${currentDate} | ${marketName} | ${paymentAmount}`;
+        generateBarcode(barcodeData); // Menghasilkan barcode
         generatedCount++;
 
         // Jika sudah mencapai jumlah barcode yang diinginkan
