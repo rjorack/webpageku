@@ -1,95 +1,76 @@
+/* Mengatur latar belakang dan font utama situs */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5e8d8; /* Warna krem yang hangat */
+    background-color: #f5f5dc; /* Warna krem */
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
-}
-
-.title {
-    text-align: center;
-    font-size: 2.2em;
-    color: #444;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.pricing-table {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.plan {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #444;
-}
-
-.price {
-    font-size: 1.8em;
-    color: #27ae60;
-    font-weight: bold;
-}
-
-ul {
-    list-style: none;
     padding: 0;
-    margin: 20px 0;
 }
 
-ul li {
-    margin: 10px 0;
-    color: #555;
-}
-
-.additional-info {
-    background-color: #fff;
+/* Mengatur container utama agar konten berada di tengah */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-p, ul {
-    color: #555;
-}
-
-.order-btn-container {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.order-btn {
-    display: inline-block;
-    background-color: #27ae60; /* Warna hijau segar */
-    color: white;
-    padding: 20px 40px;
+    background-color: #fdf6e3; /* Peach lembut untuk bagian konten utama */
     border-radius: 10px;
-    font-size: 1.2em;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.order-btn:hover {
-    background-color: #2ecc71;
+/* Mengatur tampilan tiap kartu VPS/RDP */
+.card {
+    background-color: #fff8dc; /* Light golden */
+    border: 1px solid #e0c097;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
+
+/* Mengatur tampilan heading dan paragraf */
+h1, h2, h3, p {
+    color: #4b3832; /* Warna coklat tua */
+    margin: 10px 0;
+}
+
+/* Mengatur tombol order agar tampak menarik dan besar */
+button {
+    background-color: #ff8c42; /* Oranye hangat */
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Efek hover pada tombol */
+button:hover {
+    background-color: #ff6f3c; /* Lebih gelap saat dihover */
+}
+
+/* Tambahan penataan untuk teks tambahan di bawah */
+.informasi-tambahan, .catatan-penting {
+    background-color: #ffe4c4; /* Latar belakang warna hangat */
+    padding: 20px;
+    border-radius: 8px;
+    color: #4b3832;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Penataan teks dalam section informasi tambahan */
+.informasi-tambahan h3, .catatan-penting h3 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #b3541e; /* Warna oranye tua */
+}
+
+/* Link untuk tombol telegram */
+a.button-link {
+    text-decoration: none;
+}
+
