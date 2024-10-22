@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WillCloud VPS/RDP Plans</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan ke file CSS eksternal -->
 </head>
 <body>
+    <!-- Bar Menu -->
+    <nav>
+        <ul>
+            <li><a href="#produk">Produk</a></li>
+            <li><a href="#login" onclick="showLoginForm()">Login Admin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Login Form -->
+    <div id="login">
+        <form action="/admin-login" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
     <h1 class="title">☁️ Hallo, selamat datang di WillCloud ☁️</h1>
-    <div class="pricing-table">
+
+    <!-- Pricing Table with Scroll -->
+    <div id="produk" class="pricing-table">
         <div class="plan">
             <h2>1️⃣ VPS/RDP: Ubuntu/Windows (2016, 2019, 2022)</h2>
             <p class="price">Harga: 50K</p>
@@ -59,12 +80,21 @@
             <li>Garansi hangus jika tidak mengikuti aturan di atas.</li>
         </ul>
         <p><strong>Dengan membeli, berarti Anda memahami dan menyetujui ketentuan ini.</strong></p>
-        <p>❗️ Sebelum diserahkan, sudah kami cek.</p>
-        <p>*Hati-hati terhadap CLONE, username asli hanya @EnyongBae*</p>
     </div>
 
     <div class="order-btn-container">
         <a href="https://t.me/enyongbae" class="order-btn" target="_blank">Order Sekarang</a>
     </div>
+
+    <script>
+        function showLoginForm() {
+            var loginForm = document.getElementById("login");
+            if (loginForm.style.display === "none" || loginForm.style.display === "") {
+                loginForm.style.display = "block";
+            } else {
+                loginForm.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
